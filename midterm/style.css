@@ -1,0 +1,15 @@
+
+
+
+h1{
+    font-family: 'Dongle', sans-serif;
+}
+
+.carousel-item img{
+    height: 80vh;
+    width: 70%;
+}
+
+#hero{
+    margin:auto ;
+}
