@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intos</title>
+    <link rel="stylesheet" type= "text/css" href="/css/style.css">
+    <link rel="stylesheet" type= "text/css" href="/css/common.css">
+    <link rel="stylesheet" type= "text/css" href="/css/navbar.css">
+    <script src="https://kit.fontawesome.com/99159fc9ce.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 20px;
+        }
+    
+        h1 {
+          color: #333;
+        }
+    
+        ul {
+          list-style-type: none;
+          padding: 0;
+          display: flex;
+          flex-wrap: wrap;
+        }
+    
+        li {
+          background-color: #f9f9f9;
+          padding: 10px;
+          margin-right: 10px;
+          margin-bottom: 10px;
+          border-radius: 5px;
+          flex-basis: calc(33.33% - 20px);
+        }
+    
+        li h3 {
+          color: #333;
+          margin: 0;
+        }
+    
+        li p {
+          color: #666;
+          margin-top: 5px;
+        }
+    
+        li a {
+          color: #fff;
+          background-color: #337ab7;
+          padding: 5px 10px;
+          text-decoration: none;
+          border-radius: 3px;
+        }
+    
+        li a:hover {
+          background-color: #23527c;
+        }
+    
+        form {
+          margin-top: 20px;
+        }
+    
+        input[type="text"],
+        input[type="number"],
+        button[type="submit"] {
+          padding: 10px;
+          margin-right: 10px;
+          border: none;
+          border-radius: 3px;
+        }
+    
+        button[type="submit"] {
+          background-color: #337ab7;
+          color: #fff;
+          cursor: pointer;
+        }
+    
+        button[type="submit"]:hover {
+          background-color: #23527c;
+        }
+    
+        ::placeholder {
+          color: #ccc;
+        }
+      </style>
+  <title>Products</title>
+</head>
+<body>
+
+   
+  <h1>Products</h1>
+  
+  <ul>
+    <% products.forEach((product) => { %>
+      <li>
+        <h3><%= product.name %></h3>
+        <p><%= product.description %></p>
+        <p>Price: $<%= product.price %></p>
+        <p>Quantity: <%= product.quantity %></p>
+        <a href="/products/<%= product._id %>/edit">Edit</a>
+        <form action="/products/<%= product._id %>?_method=DELETE" method="POST">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    <% }); %>
+  </ul>
+  
+  <h2>Create Product</h2>
+  <form action="/products" method="POST">
+    <input type="text" name="name" placeholder="Name" required>
+    <input type="text" name="description" placeholder="Description" required>
+    <input type="number" name="price" placeholder="Price" required>
+    <input type="number" name="quantity" placeholder="Quantity" required>
+    <button type="submit">Create</button>
+  </form>
+</body>
+</html>
