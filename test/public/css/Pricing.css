@@ -1,0 +1,74 @@
+section{
+    background: url('Glass.jpg') no-repeat;
+    background-size: cover;
+    min-height: 200vh;
+}
+
+section>h1{
+
+    color:#f1f6fa;
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 2.5rem;
+    
+}
+
+.Pricing-cards{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Pricing-card{
+    background-color: beige;
+    border-radius: 10px;
+    text-align: center;
+    padding: 1rem .75rem ;
+    width: 275px;
+    margin:1rem;
+    min-height: 400px;
+    box-shadow: 1px 2px 10px 1px #333;
+}
+
+.Pricing-card .plan{
+    font-size: 2rem;
+} 
+
+.Pricing-card .description{
+    font-size: .9rem;
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+} 
+
+.Pricing-card > a{
+    background-color: blue;
+    text-decoration: none;
+    color: #f1f6fa;
+    padding: 10px 25px;
+    border-radius: 5px;
+    transition: .3s ease-in-out;
+}
+
+.Pricing-card > a:hover{
+    background-color: rgb(41, 148, 148);
+}
+
+.Pricing-card .price{
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 10px 0;
+    margin-top: 1.5rem;
+}
+.Pricing-card .price span{
+   font-size: 1rem;
+}
+
+.Pricing-card ul{
+text-align: left;
+padding: 0 1rem;
+}
+
+.Pricing-card ul li{
+    font-size: .9rem;
+    list-style-type: circle;
+    padding-top: 5px;
+}
